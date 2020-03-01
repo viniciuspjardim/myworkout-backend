@@ -58,9 +58,10 @@ class WorkoutsController extends Controller
             'done' => 'required|boolean'
         ]);
 
-        //$workout = Workout::update($data);
-        //return response($workout, 201);
-        return $workoutId;
+        $workout = Workout::find($workoutId);
+        $workout->update($data);
+
+        return response($workout, 201);
     }
 
     /**

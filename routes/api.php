@@ -19,6 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/users/{userId}/workouts', 'WorkoutsController@index');
 Route::post('/users/{userId}/workouts', 'WorkoutsController@store');
-// FIXME: PATCH http method not working
-Route::patch('/users/{userId}/workouts/{workoutId}', 'WorkoutsController@update');
+Route::put('/users/{userId}/workouts/{workoutId}', 'WorkoutsController@update');
 Route::delete('/users/{userId}/workouts/{workoutId}', 'WorkoutsController@destroy');
