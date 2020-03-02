@@ -17,7 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/users/{userId}/workouts', 'WorkoutsController@index');
-Route::post('/users/{userId}/workouts', 'WorkoutsController@store');
-Route::put('/users/{userId}/workouts/{workoutId}', 'WorkoutsController@update');
-Route::delete('/users/{userId}/workouts/{workoutId}', 'WorkoutsController@destroy');
+Route::resource('workouts', 'WorkoutController', ['except' => ['edit', 'create']]);
